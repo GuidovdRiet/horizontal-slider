@@ -2,18 +2,18 @@ const contentScroller = document.querySelector(".horizontal-scroller__list");
 const listItems = [...document.querySelectorAll(".horizontal-scroller__item")];
 
 let scrollTotal = 0;
+let scrollLimit = [ ];
 
 const moveSlider = e => {
   const scrollAmount = +e.deltaY;
   scrollTotal = scrollTotal + -scrollAmount;
-  contentScroller.style.transform = `translate3d(${scrollTotal}px, 0, 0)`;
-  scrollLimitChecker();
-};
-
-const setScrollBoundary = (totalScrollerWidth, scrollerAmount) => {
-  if (totalScrollerWidth >= scrollerAmount) {
-    return true;
+  if(scrollTotal <= scrollLimit[0]) {
+    scrollTotal = scrollLimit[0];
+    contentScroller.style.transform = `translate3d(${scrollTotal}px, 0, 0)`;
+  } else {
+    contentScroller.style.transform = `translate3d(${scrollTotal}px, 0, 0)`;
   }
+  scrollLimitChecker();
 };
 
 const scrollLimitChecker = e => {
@@ -25,7 +25,13 @@ const scrollLimitChecker = e => {
     scrollLeftOffset
   );
   if (isScrollLimitReached) {
-    console.log('reached');
+    scrollLimit.push(scrollTotal);
+  }
+};
+
+const setScrollBoundary = (totalScrollerWidth, scrollerAmount) => {
+  if (totalScrollerWidth <= scrollerAmount) {
+    return true;
   }
 };
 
