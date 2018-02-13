@@ -1,0 +1,40 @@
+html {
+    overflow: hidden;   
+    height: 100%;
+}
+
+body {
+    background: #FD868C;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.horizontal-scroller {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: all .3 ease-in-out;
+}
+
+.horizontal-scroller__list {
+    height: auto;
+    padding: 0px;
+    width: 100%;
+    white-space: nowrap;
+    list-style: none;
+    background: green;
+}
+
+.horizontal-scroller__item {
+    width: 36.54843%;
+    margin-right: -4px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    color: #fff;
+    white-space: normal;
+    height: 500px;
+    background: url('https://source.unsplash.com/category/people/900x600/');
+}
