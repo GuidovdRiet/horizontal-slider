@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    background: #FD868C;
+    background: #000;
     margin: 0;
     overflow-x: hidden;
 }
@@ -23,7 +23,6 @@ body {
     width: 100%;
     white-space: nowrap;
     list-style: none;
-    background: green;
 }
 
 .horizontal-scroller__item {
@@ -33,8 +32,8 @@ body {
     position: relative;
     display: inline-block;
     vertical-align: top;
-    color: #fff;
     white-space: normal;
     height: 500px;
-    background: url('https://source.unsplash.com/category/people/900x600/');
+    background: url('img/placeholder.jpg');
+    background-size: cover;
 }
