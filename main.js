@@ -7,13 +7,15 @@ const moveSlider = e => {
   const scrollerWidth = -totalScrollerWidth(listItems);
   let scrollAmount = +e.deltaY;
   scrollTotal = scrollTotal + -scrollAmount;
-  if (scrollTotal >= scrollerWidth) {
-    scrollLimitChecker();
+
+  if (scrollTotal <= scrollerWidth) {
+    scrollTotal = scrollerWidth;
   }
+
+  scrollLimitChecker(scrollerWidth);
 };
 
-const scrollLimitChecker = () => {
-  const scrollerWidth = -totalScrollerWidth(listItems);
+const scrollLimitChecker = (scrollerWidth) => {
   if (scrollTotal >= scrollerWidth) {
     contentScroller.style.transform = `translate3d(${scrollTotal}px, 0, 0)`;
   }
@@ -30,7 +32,6 @@ const totalScrollerWidth = listItems => {
   return scrollerWidth - window.innerWidth;
 };
 
-// Move slider on scroll
 window.addEventListener("mousewheel", e => {
   moveSlider(e);
 });
