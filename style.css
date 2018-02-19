@@ -42,15 +42,16 @@ body {
 }
 
 /* Horizontal scroller navigation */
-
 .horizontal-scroller__nav {
+  --nav-color: #3B3B3B;
   height: 5px;
   position: absolute;
   bottom: 20px;
   border-left: 1px solid;
   border-right: 1px solid;
-  border-right-color: #3B3B3B;
-  border-left-color: #3B3B3B;
+  overflow: hidden;
+  border-right-color: var(--nav-color);
+  border-left-color: var(--nav-color);
   margin-left: 400px;
 }
 
