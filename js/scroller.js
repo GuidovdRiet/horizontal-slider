@@ -45,7 +45,7 @@ const totalContentWidth = listItems => {
 
 const totalNavWidth = totalContentWidth => {
   const totalNavWidth = totalContentWidth / 100 * 20;
-  const scrollerIndicatorWidth = contentScroller.offsetWidth / 100 * 20;
+  const scrollerIndicatorWidth = contentScroller.offsetWidth / 100 * 3;
   scrollerNav.style.width = `${totalNavWidth}px`;
   scrollerIndicator.style.width = `${scrollerIndicatorWidth}px`;
 };
