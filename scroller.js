@@ -19,7 +19,7 @@ const moveSlider = e => {
 
 const scrollLimitChecker = scrollerWidth => {
   if (scrollTotal >= scrollerWidth) {
-    let navScrollPosition = -scrollTotal / 100 * 21.9;
+    let navScrollPosition = -scrollTotal / 100 * 21.36;
     contentScroller.style.transform = `translate3d(${scrollTotal}px, 0, 0)`;
     scrollerIndicator.style.transform = `translate3d(${navScrollPosition}px, 0, 0)`;
   }
