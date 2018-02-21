@@ -29,7 +29,7 @@ body {
 }
 
 .horizontal-scroller__item {
-  width: 36.54843%;
+  width: 36%;
   margin-right: -4px;
   overflow: hidden;
   position: relative;
@@ -52,11 +52,13 @@ body {
   overflow: hidden;
   border-right-color: var(--nav-color);
   border-left-color: var(--nav-color);
-  margin-left: 400px;
+  margin-left: 32.5%; 
+  width: 35%;
 }
 
 .horizontal-scroller__indicator {
   height: 5px;
   background: rgba(81, 82, 83, 0.4);
   margin-bottom: 5px;
+  width: 5%;
 }

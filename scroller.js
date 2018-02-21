@@ -19,7 +19,7 @@ const moveSlider = e => {
 
 const scrollLimitChecker = scrollerWidth => {
   if (scrollTotal >= scrollerWidth) {
-    let navScrollPosition = -scrollTotal / 100 * 20;
+    let navScrollPosition = -scrollTotal / 100 * 21.9;
     contentScroller.style.transform = `translate3d(${scrollTotal}px, 0, 0)`;
     scrollerIndicator.style.transform = `translate3d(${navScrollPosition}px, 0, 0)`;
   }
@@ -36,18 +36,6 @@ const totalContentWidth = listItems => {
   return scrollerWidth - window.innerWidth;
 };
 
-const totalNavWidth = totalContentWidth => {
-  const scrollerIndicatorWidth = contentScroller.offsetWidth / 100 * 2.5;
-  scrollerIndicator.style.width = `${scrollerIndicatorWidth}px`;
-  const totalNavWidth =
-    totalContentWidth / 100 * 20 + scrollerIndicator.offsetWidth;
-  scrollerNav.style.width = `${totalNavWidth}px`;
-};
-
 window.addEventListener("mousewheel", e => {
   moveSlider(e);
-});
-
-window.addEventListener("load", () => {
-  totalNavWidth(totalContentWidth(listItems));
 });
