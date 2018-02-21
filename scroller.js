@@ -1,5 +1,5 @@
 const contentScroller = document.querySelector(".horizontal-scroller__list");
-const listItems = [...document.querySelectorAll(".horizontal-scroller__item")];
+const listItems = [...document.querySelectorAll(".horizontal-scroller__item-container")];
 const scrollerNav = document.querySelector(".horizontal-scroller__nav");
 const scrollerIndicator = document.querySelector(
   ".horizontal-scroller__indicator"
@@ -14,10 +14,10 @@ const moveSlider = e => {
   if (scrollTotal <= scrollerWidth) {
     scrollTotal = scrollerWidth;
   }
-  scrollLimitChecker(scrollerWidth);
+  scrollLimitChecker(scrollerWidth, e);
 };
 
-const scrollLimitChecker = scrollerWidth => {
+const scrollLimitChecker = (scrollerWidth, e) => {
   if (scrollTotal >= scrollerWidth) {
     let navScrollPosition = -scrollTotal / 100 * 21.36;
     contentScroller.style.transform = `translate3d(${scrollTotal}px, 0, 0)`;
@@ -37,5 +37,7 @@ const totalContentWidth = listItems => {
 };
 
 window.addEventListener("mousewheel", e => {
-  moveSlider(e);
+  if(window.innerWidth > 800) {
+    moveSlider(e);
+  }
 });
