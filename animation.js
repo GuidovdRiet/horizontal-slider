@@ -1,5 +1,7 @@
-const tl = new TimelineMax();
+// const tl = new TimelineMax();
 
-tl
-    .from(contentScroller, .9, { opacity: 0, y: -80 })
-    .to(contentScroller, .9, { opacity: 1, y: 0, ease: Back.easeOut.config(1.7) })
+// listItems.map(listItem => {
+//   tl
+//     .from(listItem, .2, { opacity: 0, width: 0 })
+//     .to(listItem, .2, { opacity: 1, width: '36.54843%', ease: Back.easeOut });
+// });

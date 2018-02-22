@@ -8,6 +8,7 @@ body {
   background: #000;
   margin: 0;
   overflow-x: hidden;
+  font-family: "museo-sans",sans-serif;
 }
 
 /* Horizontal scroller content */
@@ -32,7 +33,7 @@ body {
   position: relative;
   vertical-align: top;
   white-space: normal;
-  overflow: hidden;
+  /* overflow: hidden; */
   width: 36.54843%;
   height: 500px;
   margin-right: -4px;
