@@ -21,12 +21,16 @@ const moveSlider = e => {
   scrollLimitChecker(scrollerWidth, e);
 };
 
+// Width van de slider / 100 * 10%; Is 10% van de slider width;
+// Als de sliderWidth 10% is, is dit 100% van de totaal mogelijke slider width
+// De speed moet dan ook 10% zijn van de totale snelheid waarop de slider beweegt 
+
 const scrollLimitChecker = (scrollerWidth, e) => {
+  // Hoeveel procent is de scroller van het geheel?
+  const scrollerNavWidthPercent = scrollerWidth / scrollerNav.offsetWidth;
   if (scrollTotal >= scrollerWidth) {
-    let navScrollPosition = (window.innerWidth / 100 * 35);
-    console.log(navScrollPosition);
     contentScroller.style.transform = `translate3d(${scrollTotal}px, 0, 0)`;
-    scrollerIndicator.style.transform = `translate3d(${navScrollPosition}px, 0, 0)`;
+    scrollerIndicator.style.transform = `translate3d(${(scrollTotal / scrollerNavWidthPercent) - scrollerIndicator.offsetWidth}px, 0, 0)`;
   }
   if (scrollTotal >= 0) {
     scrollTotal = 0;
@@ -43,7 +47,7 @@ const totalContentWidth = listItems => {
       const listItemMargin =
         parseFloat(listItemStyle.marginLeft) +
         parseFloat(listItemStyle.marginRight);
-      return listItemWidth + listItemMargin - inlineBlockMargin;
+      return listItemWidth + listItemMargin + inlineBlockMargin;
     })
     .reduce((total, amount) => total + amount);
   return scrollerWidth - window.innerWidth;

@@ -39,11 +39,18 @@ body {
   margin-right: 50px;
 }
 
+.horizontal-scroller__item-container:first-child {
+  margin-left: 50px;
+}
+
+.horizontal-scroller__item-container:last-child {
+  margin-right: 50px;
+}
+
 .horizontal-scroller__item {
   background: url("img/placeholder.jpg");
   transition: all .7s ease-in-out;
   background-size: cover;
-  margin-right: -4px;
   height: 500px;
 }
 
