@@ -33,10 +33,10 @@ body {
   position: relative;
   vertical-align: top;
   white-space: normal;
-  /* overflow: hidden; */
+  overflow: hidden;
   width: 36.54843%;
   height: 500px;
-  margin-right: -4px;
+  margin-right: 50px;
 }
 
 .horizontal-scroller__item {
@@ -60,7 +60,7 @@ body {
   bottom: 20px;
   border-left: 1px solid var(--nav-color);
   border-right: 1px solid var(--nav-color);
-  overflow: hidden;
+  /* overflow: hidden; */
   margin-left: 32.5%; 
   width: 35%;
   z-index: 0;

@@ -23,7 +23,8 @@ const moveSlider = e => {
 
 const scrollLimitChecker = (scrollerWidth, e) => {
   if (scrollTotal >= scrollerWidth) {
-    let navScrollPosition = -scrollTotal / 100 * 21.36;
+    let navScrollPosition = (window.innerWidth / 100 * 35);
+    console.log(navScrollPosition);
     contentScroller.style.transform = `translate3d(${scrollTotal}px, 0, 0)`;
     scrollerIndicator.style.transform = `translate3d(${navScrollPosition}px, 0, 0)`;
   }
@@ -35,7 +36,15 @@ const scrollLimitChecker = (scrollerWidth, e) => {
 
 const totalContentWidth = listItems => {
   let scrollerWidth = listItems
-    .map(listItem => listItem.offsetWidth)
+    .map(listItem => {
+      const listItemStyle = window.getComputedStyle(listItem);
+      const listItemWidth = listItem.offsetWidth;
+      const inlineBlockMargin = 4; // inline block adds 4px margin not registered
+      const listItemMargin =
+        parseFloat(listItemStyle.marginLeft) +
+        parseFloat(listItemStyle.marginRight);
+      return listItemWidth + listItemMargin - inlineBlockMargin;
+    })
     .reduce((total, amount) => total + amount);
   return scrollerWidth - window.innerWidth;
 };
