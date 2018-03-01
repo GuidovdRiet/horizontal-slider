@@ -80,7 +80,6 @@ body {
   height: 1px;
   background: var(--nav-color);
   top: 2px;
-  left: 0;
 }
 
 .horizontal-scroller__indicator { 
